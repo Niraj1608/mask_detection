@@ -24,8 +24,10 @@ This project aims to detect whether a person is wearing a mask or not using deep
    pip install -r requirements.txt
    ```
 
-2. Change to the project directory:
-
+3. Change to the project directory:
+    ```
+    cd mask-detection
+    ```
 
 
 ## Usage
