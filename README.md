@@ -92,4 +92,15 @@ To run the Mask Detection app using Streamlit, follow these steps:
 
 1. Run the `streamlit_app.py` script.
 
+## License
+
+This project does not have a specific license. All rights reserved.
+
+
+## Acknowledgements
+This project is built upon the contributions and resources from the open-source community, including scikit-learn, NLTK, and Matplotlib.
+
+## contact
+If you have any questions or inquiries, please contact nirajprmr1608@example.com.
+
 
