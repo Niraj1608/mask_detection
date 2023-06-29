@@ -9,7 +9,6 @@ This project aims to detect whether a person is wearing a mask or not using deep
 - [Model Evaluation](#model-evaluation)
 - [Predictive System with GUI](#predictive-system-with-gui)
 - [Streamlit App](#streamlit-app)
-- [Contributing](#contributing)
 - [License](#license)
 
 ## Installation
