@@ -1,8 +1,6 @@
 import cv2
 import numpy as np
-from tensorflow.keras.models import load_model
-from tensorflow.keras.preprocessing.image import img_to_array
-from tensorflow.keras.applications.mobilenet_v2 import preprocess_input
+from keras.models import load_model
 import streamlit as st
 import PIL.Image
 
@@ -20,10 +18,10 @@ def main():
         if uploaded_file is not None:
             # Read and preprocess the image
             image = PIL.Image.open(uploaded_file)
-            image = image.resize((128, 128))  # Resize the image
+            image = image.resize((64, 64))# Resize the image to smaller size
             image = np.array(image)  # Convert to NumPy array
             image = image / 255.0  # Normalize the image
-            input_image_reshaped = np.reshape(image, [1, 128, 128, 3])
+            input_image_reshaped = np.reshape(image, [1, 64, 64, 3])
 
             # Make predictions
             predictions = model.predict(input_image_reshaped)
@@ -31,9 +29,9 @@ def main():
 
             # Display the result
             if input_pred_label == 1:
-                st.write("Prediction: With Mask")
+                st.markdown("<h3 style='text-align: center; '>Prediction: With Mask</h3>", unsafe_allow_html=True)
             else:
-                st.write("Prediction: Without Mask")
+                st.markdown("<h3 style='text-align: center; '>Prediction: Without Mask</h3>", unsafe_allow_html=True)
 
             # Display the uploaded image
             st.write("")
@@ -49,9 +47,9 @@ def main():
         frame = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
 
         # Resize and preprocess the image
-        image = cv2.resize(frame, (128, 128))
+        image = cv2.resize(frame, (64, 64))
         image = image / 255.0
-        input_image_reshaped = np.reshape(image, [1, 128, 128, 3])
+        input_image_reshaped = np.reshape(image, [1, 64, 64, 3])
 
         # Make predictions
         predictions = model.predict(input_image_reshaped)
@@ -59,13 +57,12 @@ def main():
 
         # Display the result
         if input_pred_label == 1:
-            st.write("Prediction: With Mask")
+            st.markdown("<h3 style='text-align: center; '>Prediction: With Mask</h3>", unsafe_allow_html=True)
         else:
-            st.write("Prediction: Without Mask")
+            st.markdown("<h3 style='text-align: center; '>Prediction: Without Mask</h3>", unsafe_allow_html=True)
 
         # Display the captured photo
         st.image(frame, channels="RGB", use_column_width=True)
 
 if __name__ == '__main__':
     main()
-
