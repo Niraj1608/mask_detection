@@ -1,4 +1,4 @@
-opencv-python==4.7.0.72
+cv2==4.7.0.72
 absl-py==1.4.0
 altair==5.0.1
 anyio==3.7.0
