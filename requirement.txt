@@ -1,5 +1,5 @@
-from tensorflow import keras 
-opencv-python==4.7.0.72
+tensorflow==2.8.0
+opencv-python==4.7.0
 numpy==1.23.5
 keras==2.12.0
 streamlit==1.24.0
