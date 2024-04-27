@@ -1,8 +1,6 @@
 import cv2
 import numpy as np
-from tensorflow.keras.models import load_model
-from tensorflow.keras.preprocessing.image import img_to_array
-from tensorflow.keras.applications.mobilenet_v2 import preprocess_input
+from keras.models import load_model
 from PIL import ImageTk, Image
 import tkinter as tk
 from tkinter import filedialog
@@ -19,10 +17,10 @@ root.geometry("500x400")
 # Function to classify the image
 def classify_image(image):
     # Preprocess the image
-    image = image.resize((128, 128))
+    image = image.resize((64, 64))
     image = np.array(image)
     image = image / 255.0
-    input_image_reshaped = np.reshape(image, [1, 128, 128, 3])
+    input_image_reshaped = np.reshape(image, [1, 64, 64, 3])
     # Make predictions
     predictions = model.predict(input_image_reshaped)
     input_pred_label = np.argmax(predictions)
